@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@font-face {
+    font-family: display1;
+    src: url(/public/font1.woff2);
+}
+@font-face {
+    font-family:display2;
+    src: url(/public/font2.woff2);
+}
+
+
+:root {
+  --primary-color: #111111;
+  --secondary-color: #C8F400;
+  --text-color: #ffffff;
+  --grey-color:#6E6E6E;
+}   
+.animate-box{
+    animation-name: upDown;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.category-box{
+  transition: transform 0.2s linear;
+}
+.category-box:hover{
+  transform: translateY(-5px);
+
+}
+
+.image-card{
+  transition:  all 0.3s linear;
+}
+.product-card{
+  transition:  all 0.3s linear;
+}
+.product-card:hover .image-card{
+  scale: 1.1;
+}
+
+.product-card:hover{
+  border-color: #5A6C0A;
+}
