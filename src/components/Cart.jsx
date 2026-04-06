@@ -58,8 +58,8 @@ const Cart = () => {
         className="h-full flex-1 cursor-default bg-black/72 backdrop-blur-[3px]"
       />
 
-      <aside className="flex h-full w-full max-w-[420px] flex-col border-l border-white/10 bg-[#141414] text-white shadow-[0_0_70px_rgba(0,0,0,0.55)]">
-        <div className="flex items-center justify-between border-b border-white/10 px-6 py-6">
+      <aside className="flex h-full w-full max-w-full flex-col border-l border-white/10 bg-[#141414] text-white shadow-[0_0_70px_rgba(0,0,0,0.55)] sm:max-w-[420px]">
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-5 sm:px-6 sm:py-6">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#53660E] bg-[#1D250C] text-[var(--secondary-color)]">
               <svg
@@ -108,7 +108,7 @@ const Cart = () => {
         </div>
 
         {cartItems.length === 0 ? (
-          <div className="flex flex-1 flex-col items-center justify-center px-8 text-center">
+          <div className="flex flex-1 flex-col items-center justify-center px-6 text-center sm:px-8">
             <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-[1.6rem] border border-white/10 bg-white/5 text-white/40">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -140,14 +140,14 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <div className="flex-1 space-y-4 overflow-y-auto px-5 py-5">
+            <div className="flex-1 space-y-4 overflow-y-auto px-4 py-4 sm:px-5 sm:py-5">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
                   className="rounded-[1.6rem] border border-white/10 bg-[#181818] p-4"
                 >
-                  <div className="flex gap-4">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-[1.2rem] bg-[radial-gradient(circle_at_top,#ffffff_0%,#f3efe8_55%,#ece4d9_100%)] p-3">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[1.2rem] bg-[radial-gradient(circle_at_top,#ffffff_0%,#f3efe8_55%,#ece4d9_100%)] p-3 sm:h-24 sm:w-24">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -159,7 +159,7 @@ const Cart = () => {
                       <div className="flex items-start justify-between gap-3">
                         <div>
                           
-                          <h3 className="mt-1 line-clamp-2 font-[display1] text-md font-bold text-white/90">
+                          <h3 className="mt-1 line-clamp-2 font-[display1] text-sm font-bold text-white/90 sm:text-md">
                             {item.title}
                           </h3>
                           {item.brand && (
@@ -193,7 +193,7 @@ const Cart = () => {
                         </button>
                       </div>
 
-                      <div className="mt-4 flex items-center justify-between gap-3">
+                      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex items-center rounded-full border border-white/10 bg-black/30 px-2 py-1">
                           <button
                             onClick={() =>
@@ -216,7 +216,7 @@ const Cart = () => {
                           </button>
                         </div>
 
-                        <div className="text-right">
+                        <div className="text-left sm:text-right">
                           <p className="font-[display2] text-xs text-white/35">
                             {formatCurrency(item.price)} each
                           </p>
@@ -231,10 +231,10 @@ const Cart = () => {
               ))}
             </div>
 
-            <div className="border-t border-white/10 bg-[#151515] px-6 py-5">
+            <div className="border-t border-white/10 bg-[#151515] px-4 py-5 sm:px-6">
              
 
-              <div className="mt-5 flex gap-3">
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <button
                   onClick={() => navigate("/dashboard/shop")}
                   className="flex-1 rounded-2xl border border-white/12 bg-white/6 px-4 py-3 font-[display1] text-base font-semibold text-white transition-all hover:bg-white/10"

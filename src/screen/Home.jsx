@@ -41,11 +41,11 @@ const Home = () => {
   }, [products]);
 
   return (
-    <div className="mt-25 h-full w-full">
-      <div className="flex h-full w-full justify-between rounded-2xl border-1 px-12 py-10">
+    <div className="mt-24 h-full w-full pb-10 sm:mt-28">
+      <div className="flex h-full w-full flex-col justify-between gap-8 rounded-2xl border-1 px-5 py-6 sm:px-8 sm:py-8 lg:flex-row lg:px-12 lg:py-10">
         <div>
           <h1 className="uppercase tracking-widest text-[#91B006]">Good morning</h1>
-          <h1 className="mt-5 font-[display1] text-5xl font-bold">
+          <h1 className="mt-5 font-[display1] text-3xl font-bold sm:text-4xl lg:text-5xl">
             Welcome back, <br />
             <span className="text-[var(--secondary-color)]">{name}!</span>
           </h1>
@@ -53,7 +53,7 @@ const Home = () => {
             Discover today's picks hand-curated products across <br />
             electronics, fashion, and more.
           </p>
-          <div className="mt-5 flex gap-3">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <div
               onClick={() => {
                 navigate("/dashboard/shop");
@@ -90,7 +90,7 @@ const Home = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="flex flex-col justify-center gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-col sm:justify-center">
             <div className="flex flex-col items-center justify-center rounded-2xl border-1 border-[#44510C] bg-[#23280F] p-5">
               <h1 className="font-[display1] text-4xl font-bold text-[var(--secondary-color)]">
                 20+
@@ -109,7 +109,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-4 gap-4">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="flex items-start gap-4 rounded-2xl bg-[#111] p-6">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#23280F] text-[var(--secondary-color)]">
             <svg
@@ -226,7 +226,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="my-5 grid grid-cols-4 gap-3">
+      <div className="my-5 grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-4">
         {categoryCards.map((category) => (
           <div
             key={category.slug}
@@ -250,7 +250,7 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-5 text-black">
+      <div className="mt-5 grid grid-cols-1 gap-5 text-black xl:grid-cols-2">
         <div className="rounded-2xl bg-white p-5">
           <div className="flex items-center justify-between">
             <h1 className="flex items-center gap-2 font-[display1] text-[18px] font-bold">
@@ -391,8 +391,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mb-30 mt-10 grid grid-cols-3 gap-5">
-        <div className="flex items-center gap-4 rounded-2xl border-white bg-[#111] p-5 font-[display2]">
+      <div className="mb-20 mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:mb-30 xl:grid-cols-3">
+        <div className="flex items-center gap-4 rounded-2xl border border-white bg-[#111] p-5 font-[display2]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

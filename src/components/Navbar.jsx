@@ -16,7 +16,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 z-40 flex h-16 w-full items-center justify-between border-b border-white/8 bg-[#111111]/95 px-10 text-white shadow-2xl backdrop-blur md:px-20 xl:px-38">
+    <div className="fixed top-0 left-0 z-40 w-full border-b border-white/8 bg-[#111111]/95 px-4 py-3 text-white shadow-2xl backdrop-blur sm:px-6 lg:px-10 xl:px-16 2xl:px-38">
+      <div className="relative flex flex-wrap items-center justify-between gap-3">
       <div className="flex items-center gap-2 font-[display1]">
         <div className="flex h-[32px] w-[32px] items-center justify-center rounded-xl bg-[#C8F400]">
           <svg
@@ -38,7 +39,7 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <div className="flex gap-7 text-sm">
+      <div className="order-3 flex w-full justify-center gap-5 text-sm sm:gap-7 md:hidden">
         <NavLink
           to="/dashboard"
           className={({ isActive }) =>
@@ -65,7 +66,34 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="pointer-events-auto absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 text-sm md:flex">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `${isActive && pathname === "/dashboard" ? "text-[#C8F400]" : "text-[#aaaaaa]"} font-medium`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/dashboard/shop"
+          className={({ isActive }) =>
+            `${isActive ? "text-[#C8F400]" : "text-[#aaaaaa]"} font-medium`
+          }
+        >
+          Shop
+        </NavLink>
+        <NavLink
+          to="/dashboard/about"
+          className={({ isActive }) =>
+            `${isActive ? "text-[#C8F400]" : "text-[#aaaaaa]"} font-medium`
+          }
+        >
+          About
+        </NavLink>
+      </div>
+
+      <div className="order-2 ml-auto flex items-center gap-2 md:order-3">
         <div className="hidden items-center gap-2 rounded-xl border border-[#2f2f2f] bg-[#191919] px-3 py-1.5 md:flex">
           <div className="flex h-[22px] w-[22px] items-center justify-center rounded-md bg-[var(--secondary-color)]">
             <h1 className="text-xs font-medium text-black">{userInitial}</h1>
@@ -123,6 +151,7 @@ const Navbar = () => {
             <line x1="21" x2="9" y1="12" y2="12"></line>
           </svg>
         </button>
+      </div>
       </div>
     </div>
   );

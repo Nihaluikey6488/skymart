@@ -127,10 +127,10 @@ const ProductsDetails = () => {
   };
 
   return (
-    <div className="px-2 pt-24 pb-16 text-white">
+    <div className="px-0 pt-22 pb-12 text-white sm:pt-24 sm:pb-16">
       <button
         onClick={() => navigate("/dashboard/shop")}
-        className="mb-8 flex items-center gap-2 text-sm font-[display2] text-white/45 transition-all hover:text-white"
+        className="mb-6 flex flex-wrap items-center gap-2 text-sm font-[display2] text-white/45 transition-all hover:text-white sm:mb-8"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -152,20 +152,20 @@ const ProductsDetails = () => {
         <span className="truncate text-white">{product.title}</span>
       </button>
 
-      <section className="grid gap-10 xl:grid-cols-[1.05fr_1fr]">
+      <section className="grid gap-8 xl:grid-cols-[1.05fr_1fr] xl:gap-10">
         <div className="space-y-5">
-          <div className="rounded-[2rem] border border-white/8 bg-white p-8 shadow-[0_24px_80px_rgba(0,0,0,0.32)]">
-            <div className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#f4f1eb]">
+          <div className="rounded-[2rem] border border-white/8 bg-white p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)] sm:p-6 lg:p-8">
+            <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#f4f1eb] sm:min-h-[420px] lg:min-h-[520px]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#ffffff_0%,#f6f2ec_42%,#ede7dc_100%)]"></div>
               <img
-                src={product.thumbnail}
+                src={activeImage || product.thumbnail}
                 alt={product.title}
-                className="relative z-10 max-h-[420px] w-full object-contain px-8"
+                className="relative z-10 max-h-[240px] w-full object-contain px-4 sm:max-h-[320px] sm:px-6 lg:max-h-[420px] lg:px-8"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
             {images.slice(0, 4).map((image, index) => (
               <button
                 key={`${image}-${index}`}
@@ -177,18 +177,14 @@ const ProductsDetails = () => {
                 }`}
               >
                 <div className="flex h-24 items-center justify-center rounded-xl bg-white">
-                  <img
-                    src={image}
-                    alt={`${product.title} ${index + 1}`}
-                    className="h-20 w-full object-contain"
-                  />
+                  <img src={image} alt={`${product.title} ${index + 1}`} className="h-20 w-full object-contain" />
                 </div>
               </button>
             ))}
           </div>
         </div>
 
-        <div className="pt-4">
+        <div className="pt-0 xl:pt-4">
           <div className="mb-4 flex flex-wrap items-center gap-3">
             <span className="rounded-full border border-[#44510C] bg-[#23280F] px-4 py-1 text-xs font-bold font-[display2] text-[var(--secondary-color)]">
               {product.category}
@@ -200,7 +196,7 @@ const ProductsDetails = () => {
             )}
           </div>
 
-          <h1 className="max-w-[14ch] font-[display1] text-2xl font-bold leading-tight md:text-3xl">
+          <h1 className="max-w-[14ch] font-[display1] text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
             {product.title}
           </h1>
 
@@ -267,7 +263,7 @@ const ProductsDetails = () => {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <button
               onClick={handleAddToCart}
-              className="flex min-h-14 min-w-[320px] flex-1 items-center justify-center gap-3 rounded-2xl bg-[var(--secondary-color)] px-8 text-lg font-bold font-[display1] text-black transition-all hover:bg-[#dfff52]"
+              className="flex min-h-14 w-full flex-1 items-center justify-center gap-3 rounded-2xl bg-[var(--secondary-color)] px-6 text-lg font-bold font-[display1] text-black transition-all hover:bg-[#dfff52] sm:min-w-[320px] sm:px-8"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +377,7 @@ const ProductsDetails = () => {
       </section>
 
       <section className="mt-16">
-        <div className="mb-7 flex items-end justify-between gap-6">
+        <div className="mb-7 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-6">
           <div>
             <p className="font-[display2] text-sm uppercase tracking-[0.35em] text-white/35">
              
@@ -396,7 +392,7 @@ const ProductsDetails = () => {
           </button>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5">
           {relatedProducts.map((item) => (
             <ProductCard key={item.id} elem={item} />
           ))}

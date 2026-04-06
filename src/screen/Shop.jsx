@@ -88,15 +88,15 @@ const Shop = () => {
   };
 
   return (
-    <div className="mt-30 h-full w-full">
+    <div className="mt-24 h-full w-full pb-10 sm:mt-28">
       <div>
-        <h1 className="font-[display1] text-4xl font-bold">All Products</h1>
+        <h1 className="font-[display1] text-3xl font-bold sm:text-4xl">All Products</h1>
         <p className="py-2 font-[display2] text-[14px] font-medium text-[var(--grey-color)]">
           {filteredProducts.length} product{filteredProducts.length === 1 ? "" : "s"} found
         </p>
       </div>
 
-      <div className="mt-5 flex w-full items-center gap-4 rounded-2xl border border-white p-5">
+      <div className="mt-5 flex w-full flex-col gap-4 rounded-2xl border border-white p-4 sm:p-5 lg:flex-row lg:items-center">
         <div
           className="flex w-full items-center gap-3 rounded-2xl border border-white/15 p-3 
           transition-all duration-300 focus-within:border-lime-300 
@@ -114,7 +114,7 @@ const Shop = () => {
         </div>
 
         <div
-          className="w-64 cursor-pointer rounded-2xl border border-white/15 p-3
+          className="w-full cursor-pointer rounded-2xl border border-white/15 p-3 lg:w-64
           transition-all duration-300 focus-within:border-lime-300
           focus-within:shadow-[0_0_15px_rgba(163,230,53,0.5)]"
         >
@@ -133,7 +133,7 @@ const Shop = () => {
         </div>
 
         <div
-          className="w-64 cursor-pointer rounded-2xl border border-white/15 p-3
+          className="w-full cursor-pointer rounded-2xl border border-white/15 p-3 lg:w-64
           transition-all duration-300 focus-within:border-lime-300
           focus-within:shadow-[0_0_15px_rgba(163,230,53,0.5)]"
         >
@@ -185,7 +185,7 @@ const Shop = () => {
       )}
 
       {filteredProducts.length > 0 ? (
-        <div className="mt-5 grid gap-4 grid-cols-[1fr_1fr_1fr_1fr_1fr]">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {filteredProducts.map((elem) => (
             <ProductCard key={elem.id} elem={elem} />
           ))}

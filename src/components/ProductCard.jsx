@@ -20,11 +20,11 @@ const ProductCard = ({ elem }) => {
       }}
       className="product-card w-full cursor-pointer overflow-hidden rounded-2xl border border-[#292929]"
     >
-      <div className="relative flex h-[200px] w-full flex-col items-center justify-center bg-white p-5 text-black">
+      <div className="relative flex h-[180px] w-full flex-col items-center justify-center bg-white p-4 text-black sm:h-[200px] sm:p-5">
         <img
           src={elem.images?.[0] || elem.thumbnail}
           alt={elem.title}
-          className="image-card h-[120px] object-cover object-center"
+          className="image-card h-[110px] object-cover object-center sm:h-[120px]"
         />
 
         <p className="absolute top-3 left-3 rounded-2xl bg-[#666666] px-2.5 py-0.5 font-[display2] text-[10px] font-medium text-white/80">
@@ -32,11 +32,11 @@ const ProductCard = ({ elem }) => {
         </p>
       </div>
 
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <p className="font-[display2] text-[12px] font-bold text-white/30">
           {elem.category}
         </p>
-        <h1 className="mt-2 line-clamp-2 min-h-[42px] font-[display2] text-[14px] font-medium text-white/80">
+        <h1 className="mt-2 line-clamp-2 min-h-[42px] font-[display2] text-[13px] font-medium text-white/80 sm:text-[14px]">
           {elem.title}
         </h1>
 
@@ -66,7 +66,7 @@ const ProductCard = ({ elem }) => {
         </div>
 
         <div className="mt-4 flex items-center justify-between gap-3">
-          <h1 className="font-[display1] text-xl font-bold text-[var(--secondary-color)]">
+          <h1 className="font-[display1] text-lg font-bold text-[var(--secondary-color)] sm:text-xl">
             $ {elem.price}
           </h1>
 
