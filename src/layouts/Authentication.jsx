@@ -1,11 +1,11 @@
 import React from 'react'
-import { Outlet } from 'react-router'
+import { Outlet } from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Authentication = () => {
   return (
-    <div className='h-full w-screen'>
+    <div className='min-h-screen w-full bg-[#0d0d0d]'>
       
         <Outlet/>
         <ToastContainer/>
