@@ -293,6 +293,7 @@ const Home = () => {
                     className="h-[30px] w-[30px] object-cover object-center"
                   />
                   <div>
+                    <p className="text-[12px] font-medium font-[display2]">{product.title}</p>
                     <h1 className="font-[display1] font-bold text-[var(--secondary-color)]">
                       $ {product.price}
                     </h1>
@@ -361,6 +362,7 @@ const Home = () => {
                     className="h-[30px] w-[30px] object-cover object-center"
                   />
                   <div>
+                    <p className="text-[12px] font-medium font-[display2]">{product.title}</p>
                     <h1 className="font-[display1] font-bold text-[var(--secondary-color)]">
                       $ {product.price}
                     </h1>

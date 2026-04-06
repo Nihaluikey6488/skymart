@@ -113,9 +113,9 @@ reset()
            
             <input
               type="password"
-             {...register('password',{required:"maximum 8 length",maxLength:{
-                value:8,
-                message:"Password canoot exceed 8 digits"
+             {...register('password',{required:"minimun 6 chars",minLength:{
+                value:6,
+                message:"Password should be 6 more than chars"
              }})}
               placeholder="Enter your password"
                className="w-full rounded-2xl border bg-[#1E1E1E] border-[var(--grey-color))] px-10 py-3 outline-none transition focus:border-[#C8F400] focus:ring-1 focus:ring-[#C8F400] font-[display2] text-sm"
