@@ -11,6 +11,7 @@ const Register = () => {
     register,
     handleSubmit,
     reset,
+    getValues,
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -19,6 +20,7 @@ const Register = () => {
   const submitHandle = (data) => {
     setRegisteredUser((prev) => [...prev, data]);
     toast.success("Account created Sucessfully");
+    navigate("/dashboard")
     reset();
   };
 
@@ -175,11 +177,9 @@ const Register = () => {
                 <input
                   type="password"
                   {...register("password1", {
-                    required: "password not match",
-                    minLength: {
-                      value: 6,
-                      message: "Password not match",
-                    },
+                    required: "Confirm Password is Required",
+                    validate: (value)=>
+                      value=== getValues("password") || "Password do  not match"
                   })}
                   placeholder="confirm password"
                   className="w-full rounded-2xl border bg-[#1E1E1E] px-10 py-3 text-sm font-[display2] outline-none transition focus:border-[#C8F400] focus:ring-1 focus:ring-[#C8F400]"

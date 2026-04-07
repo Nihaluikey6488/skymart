@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { UserData } from "../context/MyContexr";
@@ -75,7 +75,12 @@ const ProductsDetails = () => {
   const location = useLocation();
   const { product, allProducts = [] } = useLoaderData();
   const { addToCart } = useContext(UserData);
-  const [activeImage, setActiveImage] = useState(product?.images?.[0] || "");
+  const primaryImage = product?.images?.[0] || product?.thumbnail || "";
+  const [activeImage, setActiveImage] = useState(primaryImage);
+
+  useEffect(() => {
+    setActiveImage(primaryImage);
+  }, [primaryImage, product?.id]);
 
   const safeProducts = Array.isArray(allProducts) ? allProducts : [];
 
